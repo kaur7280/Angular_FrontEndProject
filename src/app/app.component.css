@@ -1,0 +1,60 @@
+h1{
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-weight: 1000;
+    
+}
+p ,div {
+    font-family: 'Raleway', sans-serif;
+    
+}
+.form-control{
+    border:0;
+    box-shadow: none;
+    font-family: 'Raleway', sans-serif;
+    margin:0px;
+}
+
+.collapsible, .active {
+    color: rgb(155, 155, 155);
+    background-color: white;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 35px;
+  }
+  
+  input {
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: rgb(173, 173, 173);
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 20px;
+
+  }
+  input:focus {
+    border-color: black
+  }
+  .collapsible:after {
+    content: '\002B';
+    color: rgb(155, 155, 155);
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2212";
+    color: rgb(155, 155, 155);
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+ 
+ 
+
+  
+ 

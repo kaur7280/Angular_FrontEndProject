@@ -1,0 +1,65 @@
+<div class="card shadow-sm p-3 mb-5 bg-body rounded" style="height:85%; margin:5% 20% 5% 20%">
+<div class="card-body overflow-auto">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <input  type="text" class="form-control" placeholder="Search by name" [(ngModel)]="searchText"  >
+    </li>
+    <li class="list-group-item">
+      <input  type="text" class="form-control" placeholder="Search by Tag" [(ngModel)]="searchTagText"  >
+    </li>
+    <li  class="list-group-item"  >
+     <div *ngFor="let e of lis; let i = index" >
+
+      <ng-container *ngIf="(e.firstName.toLowerCase().includes(searchText) || e.lastName.toLowerCase().includes(searchText)) && some[i].name.toString().includes(this.searchTagText);" >
+      <div class = "row justify-content-start" >
+        
+        <div class="col-2" >
+         
+            <img class="rounded-circle img-thumbnail" style="width: 115px;"src="{{e.pic}}" alt="">
+       
+         
+        </div>
+       <div class="col-8" >
+        <h1>{{e.firstName}} {{e.lastName}}</h1>
+
+        <p>
+          Email: {{e.email}}
+          <br>
+          Company: {{e.company}}
+          <br>
+          Skill: {{e.skill}}
+          <br>
+          Average: {{avgs[i].toFixed(3)}}%
+      
+        </p>
+        <div *ngFor="let f of e.grades; let idx = index; ">
+          <div *ngIf="showMe[i]">
+            Test {{idx+1}}: {{f}}
+          </div>
+        
+        </div>
+        <div *ngIf="some[e.id-1].name.length > 0" class="row">
+          <div *ngFor="let j of some[i].name" class="col-3" style="background-color: rgb(189, 189, 189); text-align: center; border-radius: 5px; margin:0px 2px; ">
+                {{j}}
+        </div>
+        </div>
+         
+        
+        
+        <input  type="text"  placeholder="add a Tag" name="tagName[e.id]" [(ngModel)]="tagName[i]" (keydown.enter)="onCreateTag(i)" >
+       
+    
+       </div>
+       <div class="col-2">
+        <button type="button" [ngClass]="togglebtn[i]" (click)="toggleClick(i)"></button>
+       </div>
+     
+      </div>
+    </ng-container>
+    </div>
+    </li>
+    
+  </ul>
+
+</div>
+</div>
